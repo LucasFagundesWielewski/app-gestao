@@ -2,8 +2,6 @@
 
 @php
 
-
-
 @endphp
 @isset($fornecedores)
     Fornecedor: {{ $fornecedores[1]['nome'] }}
@@ -12,5 +10,8 @@
     <br>
     @isset($fornecedores[1]['cnpj'])
         CNPJ: {{ $fornecedores[1]['cnpj'] }}
+        @empty($fornecedores[1]['cnpj'])
+            CNPJ não informado
+        @endempty
     @endisset
 @endisset
