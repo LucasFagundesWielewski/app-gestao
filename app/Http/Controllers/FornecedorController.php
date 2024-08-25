@@ -19,8 +19,6 @@ class FornecedorController extends Controller
             ],
         ];
 
-        $msg = isset($fornecedores[1]["cnpj"]) ? $cnpj = $fornecedores[1]["cnpj"] : $cnpj = "Não informado";
-
         return view("app.fornecedor.index", compact("fornecedores"));
-    }
+    }   
 }
