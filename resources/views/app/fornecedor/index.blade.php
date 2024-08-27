@@ -8,10 +8,19 @@
     <br>
     Status: {{ $fornecedores[1]['status'] }}
     <br>
-    @isset($fornecedores[1]['cnpj'])
-        CNPJ: {{ $fornecedores[1]['cnpj'] }}
-        @empty($fornecedores[1]['cnpj'])
-            CNPJ não informado
-        @endempty
-    @endisset
+    CNPJ: {{ $fornecedores[1]['cnpj'] ?? '' }}
+    <br>
+    Telefone: ({{ $fornecedores[1]['telefone'] ?? '' }}) {{ $fornecedores[1]['telefone'] ?? '' }}
+    @switch($fornecedores[1]['status'])
+        @case('11')
+            Sao Paulo - SP
+            @break
+        @case('32')
+            Juiz de Fora - MG
+            @break
+        @case('85')
+            Fortaleza - CE
+            @break 
+        @default
+            Estado não identificado       
 @endisset
