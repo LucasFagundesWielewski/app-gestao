@@ -6,7 +6,8 @@
 @endphp
 
 @isset($fornecedores)
-    @for ($i = 0; isset($fornecedores[$i]); $i++)
+    @php $i = 0 @endphp
+    @while(isset($fornecedores[$i]))
         Fornecedor: {{ $fornecedores[$i]['nome'] }}
         <br>
         Status: {{ $fornecedores[$i]['status'] }}
@@ -15,7 +16,8 @@
         <br>
         Telefone: ({{ $fornecedores[$i]['telefone'] ?? '' }}) {{ $fornecedores[$i]['telefone'] ?? '' }}
         <br>
-    @endfor
+        @php $i++ @endphp
+    @endwhile
 @endisset
 
 <br>
